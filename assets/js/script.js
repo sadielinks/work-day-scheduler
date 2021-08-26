@@ -21,7 +21,10 @@ function dailyCalendar() {
 
         currentDay()
 
-        // now we are going to start *trying* to display the calendar
+    })
+}   dailyCalendar();
+
+ // now we are going to start *trying* to display the calendar
         // var timeRow;
         // var timeColumn;
         // var calHours = [
@@ -59,9 +62,3 @@ function dailyCalendar() {
 
             } mainCalBody();
         }
-
-    })
-}
-
-
-dailyCalendar();
