@@ -1,5 +1,3 @@
-// assigning global variabels
-var calArea = document.querySelector('#calendar');
 
 // trying to make the header have date + time
 // idk why I'm so nervous to use JQuery lolz
@@ -26,29 +24,29 @@ function dailyCalendar() {
         // now we are going to start *trying* to display the calendar
         // var timeRow;
         // var timeColumn;
-        var calHours = [
-            '6 am',
-            '7 am',
-            '8 am',
-            '9 am',
-            '10 am',
-            '11 am',
-            '12 pm',
-            '1 pm',
-            '2 pm',
-            '3 pm',
-            '4 pm',
-            '5 pm',
-            '6 pm'
-        ]
+        // var calHours = [
+        //     '6 am',
+        //     '7 am',
+        //     '8 am',
+        //     '9 am',
+        //     '10 am',
+        //     '11 am',
+        //     '12 pm',
+        //     '1 pm',
+        //     '2 pm',
+        //     '3 pm',
+        //     '4 pm',
+        //     '5 pm',
+        //     '6 pm'
+        // ]
 
         // have the JQuery + HTML shake hands by connecting the class 'container'
-        function mainCalInBody() {
+        function mainCalBody() {
             var calContainer = $('.container');
 
 
             // create a loop for the timeblocks with bootstrap
-            for (i = 0; i < calHours.length; i++) {
+            for (i = 6; i < 19; i++) {
                 var timeBlock = $('<div>').addClass('row time-block"');
                 var timeRow = $('<div>').addClass('col-md-1 hour d-flex justify-content-end pt-3');
                 var eventText = $('<textarea>').addClass('event col-md-10');
@@ -56,10 +54,10 @@ function dailyCalendar() {
 
 
                 timeBlock.append(timeRow, eventText, saveBtn);
-                mainCalInBody.append(timeBlock);
+                mainCalBody.append(timeBlock);
 
 
-            } mainCalInBody();
+            } mainCalBody();
         }
 
     })
