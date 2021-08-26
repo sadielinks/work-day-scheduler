@@ -13,6 +13,11 @@ $(document).ready(function () {
         return currentDay;
     }
 
+    currentDay()
+    var displayRow;
+    var displayColumn;
+
+
 })}
 
 
