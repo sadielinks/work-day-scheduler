@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     // display the date in the header
     function currentDay() {
-        var currentDay = $("#currentDay").text(currentDate);
+        var currentDay = $('#currentDay').text(currentDate);
         return currentDay;
     }
 
@@ -24,11 +24,17 @@ $(document).ready(function () {
     currentDay()
 
 // now we are going to start *trying* to display the calendar
-var displayRow;
-var displayColumn;
+// var timeRow;
+// var timeColumn;
+var calHours = []
 
 // create a loop for the timeblocks
-    
+    for (i = 0; i < calHours.length; i++) {
+        var timeBlock = $('div').addClass('timeRow');
+        var timeRow = 
+    }
+
+
 
 })}
 
