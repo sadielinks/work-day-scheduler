@@ -55,9 +55,22 @@ function mainCalBody() {
         var textArea = $('<textarea>').addClass('event col-md-10');
         var saveBtn = $('<button>').addClass('saveBtn cold-md-1');
 
-        timeBlock.append(timeRow, eventText, saveBtn);
-        mainCalBody.append(timeBlock);
+        timeBlock.append(timeRow, textArea, saveBtn);
+        calContainer.append(timeBlock);
 
+        // need to figure out how to have the times appear... hmmm
+    }
+}
+mainCalBody();
 
-    } mainCalBody();
+// Now to show the schedule blocks according to time of day
+function colorScheduleBlocks() {
+    var hour = parseInt(moment().format('HH'));
+    // connect to timeblock loop code from earlier
+    $('.time-block').each(function() {
+        
+    }
+    
+    )
+    
 }
