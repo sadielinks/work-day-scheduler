@@ -1,26 +1,20 @@
-
 // trying to make the header have date + time
-// idk why I'm so nervous to use JQuery lolz
 // copied currentDate code direct from moment.js
 function dailyCalendar() {
     $(document).ready(function () {
         var currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
-
         // display the date in the header
         function currentDay() {
             var currentDay = $('#currentDay').text(currentDate);
             return currentDay;
         }
-
         // hoping to update the time as user on page...?...!
         function currentTime() {
             setInterval(function () {
                 currentDate();
             }, 1000)
         }
-
         currentDay()
-
     })
 } dailyCalendar();
 
@@ -46,8 +40,6 @@ function dailyCalendar() {
 // have the JQuery + HTML shake hands by connecting the class 'container'
 function mainCalBody() {
     var calContainer = $('.container');
-
-
     // create a loop for the timeblocks with bootstrap
     for (i = 6; i < 19; i++) {
         var timeBlock = $('<div>').addClass('row time-block"');
@@ -61,20 +53,26 @@ function mainCalBody() {
         // need to figure out how to have the times appear... hmmm
     }
 }
+// calling it bb
 mainCalBody();
 
 // Now to show the schedule blocks according to time of day
 function colorScheduleBlocks() {
+    // parseInt to make the moment argument into a string
     var hour = parseInt(moment().format('HH'));
     // connect to timeblock loop code from earlier
     $('.time-block').each(function () {
-        var thisHour = parseInt($(this).attr('id'));
-        if (thisHour < hour) {
-            $(this).addClass('past');
-        } else if (thisHour == hour) {
-            $(this).addClass('present');
-        } else {
-            $(this).addClass('future');
-        }
-        })
+        // BCS LA suggested using .this but I'm not able to see the blocks... heh
+        var thisHour = parseInt($(this).attr("id"));
+    if (thisHour < hour) {
+      $(this).addClass("past");
+    } else if (thisHour === hour) {
+      $(this).addClass("present");
+    } else {
+      $(this).addClass("future");
     }
+    })
+}
+// callin it baby
+colorScheduleBlocks();
+
