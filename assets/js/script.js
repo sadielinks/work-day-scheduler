@@ -67,10 +67,14 @@ mainCalBody();
 function colorScheduleBlocks() {
     var hour = parseInt(moment().format('HH'));
     // connect to timeblock loop code from earlier
-    $('.time-block').each(function() {
-        
+    $('.time-block').each(function () {
+        var thisHour = parseInt($(this).attr('id'));
+        if (thisHour < hour) {
+            $(this).addClass('past');
+        } else if (thisHour == hour) {
+            $(this).addClass('present');
+        } else {
+            $(this).addClass('future');
+        }
+        })
     }
-    
-    )
-    
-}
