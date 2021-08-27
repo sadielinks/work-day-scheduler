@@ -1,6 +1,7 @@
 // trying to make the header have date + time
 // copied currentDate code direct from moment.js
 
+// Shows the date + time via moment.js, bless it
 function dailyCalendar() {
     $('#currentDay').text(moment().format('MMMM Do YYYY, h:mm:ss a'));
         } 
@@ -8,7 +9,7 @@ function dailyCalendar() {
 dailyCalendar();
 
 
-// hoping to update the time as user on page...?...! (previously used to be in dailyCalendar function :/ )
+// Updates the time (to the second) per moment.js and displays in the bootsrap jumbotron
 function currentTime() {
     setInterval(function () {
         dailyCalendar();
