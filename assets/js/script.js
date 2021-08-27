@@ -22,43 +22,42 @@ function dailyCalendar() {
         currentDay()
 
     })
-}   dailyCalendar();
+} dailyCalendar();
 
- // now we are going to start *trying* to display the calendar
-        // var timeRow;
-        // var timeColumn;
-        // var calHours = [
-        //     '6 am',
-        //     '7 am',
-        //     '8 am',
-        //     '9 am',
-        //     '10 am',
-        //     '11 am',
-        //     '12 pm',
-        //     '1 pm',
-        //     '2 pm',
-        //     '3 pm',
-        //     '4 pm',
-        //     '5 pm',
-        //     '6 pm'
-        // ]
+// now we are going to start *trying* to display the calendar
+// var timeRow;
+// var timeColumn;
+// var calHours = [
+//     '6 am',
+//     '7 am',
+//     '8 am',
+//     '9 am',
+//     '10 am',
+//     '11 am',
+//     '12 pm',
+//     '1 pm',
+//     '2 pm',
+//     '3 pm',
+//     '4 pm',
+//     '5 pm',
+//     '6 pm'
+// ]
 
-        // have the JQuery + HTML shake hands by connecting the class 'container'
-        function mainCalBody() {
-            var calContainer = $('.container');
-
-
-            // create a loop for the timeblocks with bootstrap
-            for (i = 6; i < 19; i++) {
-                var timeBlock = $('<div>').addClass('row time-block"');
-                var timeRow = $('<div>').addClass('col-md-1 hour d-flex justify-content-end pt-3');
-                var eventText = $('<textarea>').addClass('event col-md-10');
-                var saveBtn = $('<button>').addClass('saveBtn cold-md-1')
+// have the JQuery + HTML shake hands by connecting the class 'container'
+function mainCalBody() {
+    var calContainer = $('.container');
 
 
-                timeBlock.append(timeRow, eventText, saveBtn);
-                mainCalBody.append(timeBlock);
+    // create a loop for the timeblocks with bootstrap
+    for (i = 6; i < 19; i++) {
+        var timeBlock = $('<div>').addClass('row time-block"');
+        var timeRow = $('<div>').addClass('col-md-1 hour d-flex justify-content-end pt-3');
+        var textArea = $('<textarea>').addClass('event col-md-10');
+        var saveBtn = $('<button>').addClass('saveBtn cold-md-1');
+
+        timeBlock.append(timeRow, eventText, saveBtn);
+        mainCalBody.append(timeBlock);
 
 
-            } mainCalBody();
-        }
+    } mainCalBody();
+}
