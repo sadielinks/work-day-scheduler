@@ -79,3 +79,6 @@ function colorScheduleBlocks() {
 // callin it baby
 colorScheduleBlocks();
 
+
+
+// local storage components 
