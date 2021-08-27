@@ -1,5 +1,6 @@
 // trying to make the header have date + time
 // copied currentDate code direct from moment.js
+
 function dailyCalendar() {
     $(document).ready(function () {
         var currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
@@ -17,6 +18,8 @@ function dailyCalendar() {
         currentDay()
     })
 } dailyCalendar();
+
+
 
 // now we are going to start *trying* to display the calendar
 // var timeRow;
@@ -41,12 +44,13 @@ function dailyCalendar() {
 function mainCalBody() {
     var calContainer = $('.container');
     // create a loop for the timeblocks with bootstrap
-    for (i = 6; i < 19; i++) {
+    for (i = 6; i < 20; i++) {
         var timeBlock = $('<div>').addClass('row time-block"');
         var timeRow = $('<div>').addClass('col-md-1 hour d-flex justify-content-end pt-3');
         var textArea = $('<textarea>').addClass('event col-md-10');
         var saveBtn = $('<button>').addClass('saveBtn cold-md-1');
 
+        timeBlock.attr("id", i);
         timeBlock.append(timeRow, textArea, saveBtn);
         calContainer.append(timeBlock);
 
