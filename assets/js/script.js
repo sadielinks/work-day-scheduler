@@ -2,24 +2,20 @@
 // copied currentDate code direct from moment.js
 
 function dailyCalendar() {
-    $(document).ready(function () {
-        var currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
-        // display the date in the header
-        function currentDay() {
-            var currentDay = $('#currentDay').text(currentDate);
-            return currentDay;
-        }
-        // hoping to update the time as user on page...?...!
-        function currentTime() {
-            setInterval(function () {
-                currentDate();
-            }, 1000)
-        }
-        currentDay()
-    })
-} dailyCalendar();
+    $('#currentDay').text(moment().format('MMMM Do YYYY, h:mm:ss a'));
+        } 
+//callin it bb
+dailyCalendar();
 
 
+// hoping to update the time as user on page...?...! (previously used to be in dailyCalendar function :/ )
+function currentTime() {
+    setInterval(function () {
+        dailyCalendar();
+    }, 1000)
+}
+// callin it bb
+currentTime()
 
 // now we are going to start *trying* to display the calendar
 // var timeRow;
@@ -40,7 +36,9 @@ function dailyCalendar() {
 //     '6 pm'
 // ]
 
+
 // have the JQuery + HTML shake hands by connecting the class 'container'
+
 function mainCalBody() {
     var calContainer = $('.container');
     // create a loop for the timeblocks with bootstrap
