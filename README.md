@@ -18,7 +18,7 @@ In this application the user....
 
 ## Screenshot
 
-![Screenshot](assets/images/placeholder.gif)
+![Screenshot](assets/images/screenshot.png)
 
 
 ## Links
