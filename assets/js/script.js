@@ -23,7 +23,9 @@ function mainCalBody() {
         var timeRow = $('<div>').addClass('col-md-1 hour d-flex justify-content-end pt-3');
         var textArea = $('<textarea>').addClass('col-md-10 description');
         var saveBtn = $('<button>').addClass('saveBtn col-md-1');
-        // save icon from font awesome
+        // save icon from font awesome, but have to add 'i' class to use fontawesome icon, thanks tutor!
+        // basically need to use create: <i class="far fa-check-square"></i>
+        var saveBtnCheck = $('<i>').addClass('far fa-check-square');
 
         // template literals <3
         timeRow.text(`${i}:00`);
@@ -31,6 +33,8 @@ function mainCalBody() {
 
         timeBlock.append(timeRow, textArea, saveBtn);
         calContainer.append(timeBlock);
+
+        saveBtn.append(saveBtnCheck);
 
         // need to figure out how to have the times appear... hmmm
     }
