@@ -68,7 +68,13 @@ function colorScheduleBlocks() {
 // local storage components
 // callin' on the DOM so the following functions (i.e. saving what is written in each textbox) will start once the document in loaded
 $(document).ready(function () {
-    // saving what is written in each textbox to local storage via creating an id
+    // will 'set' what is written in each textbox to local storage
+    
+
+
+
+
+    // will 'get' what is written in each textbox from local storage
     $('.time-block').each(function () {
         var storageId = $(this).attr('id');
         var getEvent = localStorage.getItem(id);
