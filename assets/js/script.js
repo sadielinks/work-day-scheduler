@@ -27,10 +27,11 @@ function mainCalBody() {
         // basically need to use create: <i class="far fa-check-square"></i>
         var saveBtnCheck = $('<i>').addClass('far fa-check-square');
 
-        // template literals <3
+        // template literals <3 to create id's that we can attach the time digits to
         timeRow.text(`${i}:00`);
         timeBlock.attr('id', `hour-${i}`);
 
+        // now need to append/add to the DOM 
         timeBlock.append(timeRow, textArea, saveBtn);
         calContainer.append(timeBlock);
 
@@ -89,6 +90,5 @@ $(document).ready(function () {
             $(this).children('.event').val(getEvent);
         }
     });
-
 
 });
