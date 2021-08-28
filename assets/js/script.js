@@ -75,9 +75,9 @@ $(document).ready(function () {
     // will 'set' what is written in each textbox to local storage when 'save' icon is clicked
     $('saveBtn').on('click',function () {
         // need to go 'up' into parent
-        var saveThisTime = $(this).parent().attr('id').split('-')[1];
+        var saveThisTime = $(this).attr('id').split('-')[1];
         // need to set this to the 'sibling'
-        var saveThisEvent = $(this).sibling().attr('.event').val();
+        var saveThisEvent = $(this).attr('.event').val();
         // actually telling the local storage to save specifically these items when click function happens
         localStorage.setItem(saveThisTime, saveThisEvent);
         
