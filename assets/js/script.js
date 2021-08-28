@@ -1,6 +1,4 @@
-// copied currentDate code direct from moment.js
-
-// Shows the date + time via moment.js, bless it
+// Shows the date + time (currentDate code direct from moment.js), bless it
 function dailyCalendar() {
     $('#currentDay').text(moment().format('MMMM Do YYYY, h:mm:ss a'));
 }
@@ -36,7 +34,7 @@ function mainCalBody() {
 
         // need to figure out how to have the times appear... hmmm
     }
-    // callin the color coded block function within the main container
+    // callin the color coded block function within the main container function
     colorScheduleBlocks();
 }
 // calling it bb
@@ -46,7 +44,7 @@ mainCalBody();
 function colorScheduleBlocks() {
     // parseInt to make the moment argument into a string
     var momentHour = moment().hours();
-    // connect to timeblock loop code from earlier
+    // connect to timeblock class (seen in css)
     $('.time-block').each(function () {
         // also using .split to help remove the id assignment in line 32, so that we only color code the time block 
         var thisHour = parseInt($(this).attr('id').split('-')[1]);
@@ -66,21 +64,27 @@ function colorScheduleBlocks() {
 }
 
 // local storage components
-// callin' on the DOM so the following functions (i.e. saving what is written in each textbox) will start once the document in loaded
+// callin' on the DOM so the following functions (i.e. saving what is written & then keeping it in each textbox) will start once the document in loaded
 $(document).ready(function () {
-    // will 'set' what is written in each textbox to local storage
-    
 
+    // will 'set' what is written in each textbox to local storage when 'save' icon is clicked
+    $('saveBtn').on('click',function () {
+        // need to go 'up' into parent
+        var saveThisTime = $(this).parent();
+        // need to set this to the 'sibling'
+        var saveThisEvent = $(this).siblings('.event').val();
+        // actually telling the local storage to save specifically these items when click function happens
+        localStorage.setItem(saveThisTime, saveThisEvent);
+    });
 
-
-
-    // will 'get' what is written in each textbox from local storage
+    // will 'get' what is written in each textbox from local storage and remain on the page until deleted/changed
     $('.time-block').each(function () {
-        var storageId = $(this).attr('id');
-        var getEvent = localStorage.getItem(id);
-        if (getEvent != null) {
+        var storageId = $(this);
+        var getEvent = localStorage.getItem(storageId);
+        if (getEvent !== null) {
             $(this).children('.event').val(getEvent);
         }
-    })//;
-})
+    });
 
+
+});
