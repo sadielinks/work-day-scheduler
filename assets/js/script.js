@@ -16,7 +16,7 @@ currentTime()
 function mainCalBody() {
     var calContainer = $('.container');
     // create a loop for the timeblocks with bootstrap
-    for (i = 6; i < 20; i++) {
+    for (i = 6; i < 18; i++) {
         // will also be dynamically created the DOM elements
         var timeBlock = $('<div>').addClass('row time-block');
         var timeRow = $('<div>').addClass('col-md-1 hour d-flex justify-content-end pt-3');
