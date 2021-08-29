@@ -73,22 +73,28 @@ function colorScheduleBlocks() {
 $(document).ready(function () {
 
     // will 'set' what is written in each textbox to local storage when 'save' icon is clicked
-    $('saveBtn').on('click',function () {
+    $('.saveBtn').on('click',function () {
+        console.log('check')
         // need to go 'up' into parent
-        var saveThisTime = $(this).attr('id').split('-')[1];
+        var saveThisTime = $(this).parent().attr('id');
+        console.log(saveThisTime)
         // need to set this to the 'sibling'
-        var saveThisEvent = $(this).attr('.event').val();
+        var saveThisEvent = $(this).siblings('.description').val();
+        console.log(saveThisEvent)
         // actually telling the local storage to save specifically these items when click function happens
         localStorage.setItem(saveThisTime, saveThisEvent);
-        
+
     });
 
     // will 'get' what is written in each textbox from local storage and remain on the page until deleted/changed
-    $('.textarea').each(function () {
-        var storageId = $(this);
+    $('textarea').each(function () {
+        var storageId = $(this).siblings().attr('id');
+        console.log(storageId)
         var getEvent = localStorage.getItem(storageId);
-        if (getEvent !== null) {
-            $(this).children('.event').val(getEvent);
+        console.log(getEvent)
+        if (getEvent === null) {
+            $(this).children('.description').val(getEvent);
+            console.log(this)
         }
     });
 
