@@ -82,13 +82,10 @@ $(document).ready(function () {
     $('textarea').each(function () {
         // again, assigning id's that will relate to the local storage info
         var storageId = $(this).parent().attr('id');
-        console.log(storageId)
         var getEvent = localStorage.getItem(storageId);
-        console.log(getEvent)
         // if statement since default input ends up 'null', so *if* there's a value, it should show
         if (getEvent !== null) {
-            $(this).siblings('.description').val(storageId);
+            $(this).val(getEvent);
         }
     });
-
 });
