@@ -2,7 +2,6 @@
 function dailyCalendar() {
     $('#currentDay').text(moment().format('MMMM Do YYYY, h:mm:ss a'));
 }
-//callin it bb
 dailyCalendar();
 
 // Updates the time (to the second) per moment.js and displays in the bootsrap jumbotron
@@ -11,7 +10,6 @@ function currentTime() {
         dailyCalendar();
     }, 1000)
 }
-// callin it bb
 currentTime()
 
 // have the JQuery + HTML shake hands by connecting the class 'container'
@@ -38,7 +36,6 @@ function mainCalBody() {
     // callin the color coded block function within the main container function
     colorScheduleBlocks();
 }
-// calling it bb
 mainCalBody();
 
 // Now to show the schedule blocks according to time of day

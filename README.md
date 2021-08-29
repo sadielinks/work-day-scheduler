@@ -17,10 +17,14 @@ In this application the user is presented with a working hours scheduler. The us
 
 
 ## Screenshot
-
+```
+General Screen
+```
 ![Screenshot](assets/images/screenshot.png)
+```
+Color Coded Hours
+```
 ![Screenshot](assets/images/screenshot2.png)
-
 
 ## Links
 

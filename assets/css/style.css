@@ -69,4 +69,10 @@ body {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
   }
-  
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    margin: 30px;
+    position: relative;
+  }
